@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Converter</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body><div>
+    <div class="container">
+         <h2 id="heading">Number Converter</h2><br><br>
+         <form name="myForm"></form>
+            <lable for="number">Enter number</lable>
+            <input type="text" name="number" id="input">
+
+            <lable for="number-type">From:</lable>
+            <select name="number-type" id="from">
+                <option value="Decimal">Decimal</option>
+                <option value="Binary">Binary</option>
+                <option value="Octal">Octal</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+            </select>
+
+            <lable for="number-type">To:</lable>
+            <select name="number-type" id="to">
+                <option value="Decimal">Decimal</option>
+                <option value="Binary">Binary</option>
+                <option value="Octal">Octal</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+            </select><br>
+        
+            <input type="button" value="Converter"  id="convert">
+            <input type="button" value="Swap" id="swap"><br>
+
+            <label for="result-number">Result number</label>
+            <input type="text" name="result-number" id="output">
+
+        </form>
+     </div>
+</div>
+   
+<script src="./set.js"></script>    
+</body>
+</html>

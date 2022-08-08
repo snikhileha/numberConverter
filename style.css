@@ -1,0 +1,29 @@
+ *{
+    margin:5px;
+    padding: 10px;
+    
+    
+    
+}
+body{
+   
+     display: flex;
+     align-items: center;
+     justify-content: center; 
+     
+}
+.container{
+    background-color: rgb(191, 197, 198);
+    height: 650px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+     align-self: center; 
+     
+} 
+#heading{
+    align-self: center;
+
+} 
+
