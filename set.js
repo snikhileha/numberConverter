@@ -1,3 +1,4 @@
+"use strict";
 const input = document.getElementById("input");
 const output = document.getElementById("output");
 const convert =  document.getElementById("convert");
@@ -85,12 +86,16 @@ convert.addEventListener("click",()=>{
         document.getElementById("output").value = ans12;         
       }
 })
+
+                    //  SWAP BUTTON
+
 swap.addEventListener("click",()=>{
     const temp = from.value;
     from.value = to.value;
     to.value = temp;
 })
-
+        
+                  //  CONVERT BUTTON -convert decimal to binary
 
 function convertDecimalToBinary(inputNumber,number){
   var answer="";
@@ -99,7 +104,7 @@ function convertDecimalToBinary(inputNumber,number){
   var k=6;
   var regex1 = /^[\-]{1}[0-9\.]{1,}$/;
   var regex = /^[0-9\.]*$/;
-  if(inputNumber.toString().match(regex)){
+  if(inputNumber.toString().trim().match(regex)){
       inputNumber = Number(inputNumber);
       let decimal = parseInt(inputNumber);
       let fraction = inputNumber - decimal;
@@ -117,7 +122,7 @@ function convertDecimalToBinary(inputNumber,number){
       }
       answer = answer1+"."+ answer2;
   }
-  else if(inputNumber.toString().match(regex1)){
+  else if(inputNumber.toString().trim().match(regex1)){
   inputNumber = Number(inputNumber);
   inputNumber = Math.abs(inputNumber);
   let decimal = parseInt(inputNumber);
@@ -141,11 +146,14 @@ function convertDecimalToBinary(inputNumber,number){
  
 }
   return answer;
-}  
+}
+
+                     //  CONVERT BUTTON -convert binary to decimal
+
 function convertBinaryToDecimal(inputNumber){
      var regex =/^[0-1\.]*$/;
      var regex1 =/^[-]{1}[0-1\.]*$/;
-     if(inputNumber.toString().match(regex) ){
+     if(inputNumber.toString().trim().match(regex) ){
       inputNumber = inputNumber.toString();
        var inputNumber1 = inputNumber.split(".");
        var decimal = parseInt(inputNumber1[0],2);
@@ -161,7 +169,7 @@ function convertBinaryToDecimal(inputNumber){
          }
             
          }
-        else if(inputNumber.toString().match(regex1) ){
+        else if(inputNumber.toString().trim().match(regex1) ){
           inputNumber = Number(inputNumber);
           inputNumber = Math.abs(inputNumber);
           inputNumber = inputNumber.toString();
@@ -182,7 +190,10 @@ function convertBinaryToDecimal(inputNumber){
              decimal = "This is not binary number!";
          }
       return decimal;
- }   
+ }  
+ 
+                    //  CONVERT BUTTON -convert decimal to hexadecimal
+
  function convertDecimalToHexadecimal(inputNumber,number){
     var answer="";
     var answer1="";
@@ -190,7 +201,7 @@ function convertBinaryToDecimal(inputNumber){
     var k=10;
     var regex = /^[0-9\.]*$/;
     var regex1 = /^[-]{1}[0-9\.]*$/;
-    if(inputNumber.toString().match(regex)){
+    if(inputNumber.toString().trim().match(regex)){
         inputNumber = Number(inputNumber);
         let decimal = parseInt(inputNumber);
         let fraction = inputNumber - decimal;
@@ -246,7 +257,7 @@ function convertBinaryToDecimal(inputNumber){
         answer = answer1+"."+ answer2;
         
     }
-     else if(inputNumber.toString().match(regex1)){
+     else if(inputNumber.toString().trim().match(regex1)){
       inputNumber = Number(inputNumber);
       inputNumber = Math.abs(inputNumber)
       let decimal = parseInt(inputNumber);
@@ -310,6 +321,10 @@ function convertBinaryToDecimal(inputNumber){
  }
     return answer;
 }  
+
+
+                      //  CONVERT BUTTON -convert decimal to octal
+
 function convertDecimalToOctal(inputNumber,number){
   inputNumber = Number(inputNumber);
   let decimal = parseInt(inputNumber);
@@ -319,7 +334,7 @@ function convertDecimalToOctal(inputNumber,number){
     var k=6;
     var regex =/^[0-9\.]*$/;
     var regex1 = /^[-]{1}[0-9\.]{1,}$/;
-    if(inputNumber.toString().match(regex)){
+    if(inputNumber.toString().trim().match(regex)){
        
         let fraction = inputNumber - decimal;
         while(k!=0){
@@ -337,7 +352,7 @@ function convertDecimalToOctal(inputNumber,number){
         answer = answer1+"."+ answer2;
     
     }
-     else if(inputNumber.toString().match(regex1)){
+     else if(inputNumber.toString().trim().match(regex1)){
       inputNumber = Number(inputNumber);
       inputNumber = Math.abs(inputNumber);
       let decimal = parseInt(inputNumber);
@@ -363,13 +378,15 @@ function convertDecimalToOctal(inputNumber,number){
        
  }
     return answer;
-}  
+}
+
+                  //  CONVERT BUTTON -convert octal to decimal
 
 function convertOctalToDecimal(inputNumber){
   var regex =/^[0-7\.]*$/;
   var regex1 =/^[-]{1}[0-7\.]*$/;
 
-  if(inputNumber.toString().match(regex) ){
+  if(inputNumber.toString().trim().match(regex) ){
    inputNumber = inputNumber.toString();
   var inputNumber1 = inputNumber.split(".");
   var decimal = parseInt(inputNumber1[0],8);
@@ -384,7 +401,7 @@ function convertOctalToDecimal(inputNumber){
       }
          
       }
-     else if(inputNumber.toString().match(regex1) ){
+     else if(inputNumber.toString().trim().match(regex1) ){
        inputNumber = Number(inputNumber);
        inputNumber = Math.abs(inputNumber);
        inputNumber = inputNumber.toString();
@@ -405,12 +422,15 @@ function convertOctalToDecimal(inputNumber){
       }
    return decimal;
 }
+
+                   //  CONVERT BUTTON -convert hexadecimal to decimal
+
  function convertHexadecimalToDecimal(inputNumber){
    
      var regex =/^[0-9a-fA-F\.]{1,}$/;
      var regex1 = /^[-]{1}[0-9a-fA-F\.]{1,}$/;
      if(inputNumber.match(regex) ){
-      inputNumber = inputNumber.toString();
+      inputNumber = inputNumber.toString().trim();
       var inputNumber1 = inputNumber.split(".");
          var decimal = parseInt(inputNumber1[0],16);
          if(decimal == 'A' || decimal== 'a'){
@@ -450,7 +470,7 @@ function convertOctalToDecimal(inputNumber){
            }
         
          }
-          else if(inputNumber.match(regex1) ){
+          else if(inputNumber.toString().trim().match(regex1) ){
             inputNumber = Number(inputNumber);
             inputNumber = Math.abs(inputNumber);
           inputNumber = inputNumber.toString();
@@ -498,32 +518,50 @@ function convertOctalToDecimal(inputNumber){
              decimal = "This is not hexadecimal number!";
          }
       return decimal;
- }   
+ }  
+ 
+                 //  CONVERT BUTTON -convert binary to hexadecimal
+
 function convertBinaryToHexadecimal(inputNumber){
          let decimalVal1 = convertBinaryToDecimal(inputNumber);
         answer = convertDecimalToHexadecimal(decimalVal1, "binary");
         return answer;
-}    
+}  
+
+                  //  CONVERT BUTTON -convert binary to octal
+
 function convertBinaryToOctal(inputNumber){
      let decimalVal3 = convertBinaryToDecimal(inputNumber);
         answer = convertDecimalToOctal(decimalVal3, "binary");
       return answer;
-}    
+} 
+
+                   //  CONVERT BUTTON -convert octal to binary 
+
 function convertOctalToBinary(inputNumber){
     let decimalVal5 = convertOctalToDecimal(inputNumber);
         answer = convertDecimalToBinary(decimalVal5,"octal");
      return answer;
-}    
+} 
+
+                    //  CONVERT BUTTON -convert hexadecimal to octal
+
 function convertHexadecimalToOctal(inputNumber){
     let decimalVal4 = convertHexadecimalToDecimal(inputNumber);
     answer = convertDecimalToOctal(decimalVal4,"hexadecimal");
      return answer;
-}    
+} 
+ 
+                  //  CONVERT BUTTON -convert hexadecimal to binary
+
 function convertHexadecimalToBinary(inputNumber){
     let decimalVal2 = convertHexadecimalToDecimal(inputNumber);
         answer = convertDecimalToBinary(decimalVal2,"hexadecimal");
      return answer;
-}    
+}  
+
+                   //  CONVERT BUTTON -convert octal to hexadecimal
+
 function convertOctalToHexadecimal(inputNumber){
     let decimalVal6 = convertOctalToDecimal(inputNumber);
     answer= convertDecimalToHexadecimal(decimalVal6,"octal");
