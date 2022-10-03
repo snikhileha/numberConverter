@@ -1,64 +1,69 @@
-*{
-    margin:5px;
+* {
+    margin: 5px;
     padding: 10px;
-    
-    
-    
- }
- body{
-   
-     display: flex;
-     align-items: center;
-     justify-content: center; 
-     
- }
- .container{
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
     background-color: rgb(191, 197, 198);
     height: 650px;
     width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-     align-self: center; 
-     
- } 
- #heading{
     align-self: center;
-    font-size: 50px ;
+
+}
+
+#heading {
+    align-self: center;
+    font-size: 50px;
     margin-top: 20px;
     font-weight: 90;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
-    
- 
- } 
- 
-    @media(max-width:584px ){
-        body{
-   
-            display: flex;
-            align-items: center;
-            justify-content: center; 
-            
-        }
-        .container{
-            background-color: rgb(191, 197, 198);
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: stretch;
-             align-self: center; 
-             
-         } 
-         #heading{
-            align-self: center;
-            font-size: 20px ;
-            margin-top: 10px;
-            font-weight: 30;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            
-         
-         } 
+
+
+}
+
+@media(max-width:584px) {
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
 
     }
+
+    .container {
+
+        height: 120%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        align-self: center;
+
+    }
+
+    #heading {
+        align-self: center;
+        font-size: 20px;
+
+        font-weight: 30;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+    }
+
+}
